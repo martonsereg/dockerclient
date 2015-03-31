@@ -101,10 +101,21 @@ type ContainerInfo struct {
 		Bridge      string
 		Ports       map[string][]PortBinding
 	}
+	Node           *SwarmNode
 	SysInitPath    string
 	ResolvConfPath string
 	Volumes        map[string]string
 	HostConfig     *HostConfig
+}
+
+type SwarmNode struct {
+	ID     string
+	IP     string
+	Addr   string
+	Name   string
+	CPUs   int64
+	Memory int64
+	Labels map[string]string
 }
 
 type ContainerChanges struct {
